@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.yk.model.AccountEntity" table="yk_account">
+
+        <id name="id" column="id">
+            <generator class="native"></generator>
+        </id>
+        <property name="username" column="username" type="java.lang.String"></property>
+        <property name="password" column="password" type="java.lang.String"></property>
+        <property name="name_ch"  column="name_ch"  type="java.lang.String"></property>
+        <property name="create_time" column="create_time" type="java.util.Date"></property>
+        <property name="email" column="email" type="java.lang.String"></property>
+        <property name="role" column="role" type="integer"></property>
+        <property name="id_card" column="id_card" type="java.lang.String"></property>
+        <property name="dept" column="dept" type="integer"></property>
+        <many-to-one name="teacher_id" column="teacher_id" unique="true" cascade="all" lazy="false"></many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,73 @@
+html,body,ul,li,h1,h2,h3,h4,h5,h6,blockquote,object,img,em,form,input,textarea,label{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-size: 110%;
+    color:#272727;
+    line-height:1.5em;
+    background-color: #efefef;
+}
+.wrapper{
+    width:310px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    border: 5px solid #414141;
+
+}
+header {
+    padding-top: 10px;
+    height: 30px;
+    font-size: 95%;
+    line-height: 120%;
+    font-family: "Times New Roman", Times, serif;
+    background-color:black;
+    color:white;
+    text-align:center;
+}
+img{border:0;width: 310px;margin: 0px;}
+nav {
+    margin-top: 0px;
+    line-height:30px;
+    background-color: #aaa7bb;
+    float:left;
+    padding:5px;
+}
+section {
+    float:left;
+    padding:10px;
+}
+section h1 {
+    text-align: center;
+    color: #000099;
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+    width: auto;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+    background-color:#fff;
+}
+table#t01 th	{
+    background-color: black;
+    color: white;
+}
+.bkLogErr {
+    color: #ff1a11;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.yk.model.CourseEntity" table="yk_course">
+
+        <id name="id" column="id">
+            <generator class="native"></generator>
+        </id>
+        <property name="course_num" column="course_num" type="java.lang.String"></property>
+        <property name="course_name" column="course_name" type="java.lang.String"></property>
+        <property name="credit"  column="credit"  type="integer"></property>
+    </class>
+</hibernate-mapping>

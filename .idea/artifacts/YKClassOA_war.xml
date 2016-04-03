@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="YKClassOA:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="YKClassOA.war">
+      <element id="artifact" artifact-name="YKClassOA:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="dom4j-1.6.1" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.12-bin" />
+          <element id="library" level="project" name="jxl" />
+          <element id="library" level="project" name="commons-fileupload-1.3.1" />
+          <element id="library" level="project" name="commons-io-2.4" />
+          <element id="library" level="project" name="jstl" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

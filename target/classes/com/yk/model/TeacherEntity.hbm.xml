@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.yk.model.TeacherEntity" table="yk_teacher">
+
+        <id name="id" column="id" type="integer">
+            <generator class="native"/>
+        </id>
+        <property name="staffId" column="staffId" type="java.lang.String"></property>
+        <one-to-one name="account_id" property-ref="teacher_id"></one-to-one>
+        <many-to-one name="classItem_id" column="classItem_id" unique="true" lazy="false"></many-to-one>
+        <many-to-one name="course_id" column="course_id"></many-to-one>
+    </class>
+</hibernate-mapping>

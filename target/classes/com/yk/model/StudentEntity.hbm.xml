@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.yk.model.StudentEntity" table="yk_student">
+        <id name="id" column="id">
+            <generator class="native"></generator>
+        </id>
+        <property name="stu_num" column="stu_num" type="java.lang.String" not-null="true" unique="true"></property>
+        <property name="stu_name" column="stu_name" type="java.lang.String"></property>
+        <property name="stu_birthplace" column="stu_birthplace" type="java.lang.String"></property>
+        <property name="stu_birthday" column="stu_birthday" type="date"></property>
+        <property name="stu_sex" column="stu_sex" type="integer"></property>
+        <property name="stu_position" column="stu_position" type="integer"></property>
+        <property name="stu_origin_school" column="stu_origin_school" type="java.lang.String"></property>
+        <property name="stu_class_num" column="stu_class_num" type="java.lang.String"></property>
+        <property name="stu_entr_year" column="stu_entr_year" type="date"></property>
+        <property name="stu_tel" column="stu_tel" type="long"></property>
+        <property name="stu_id_card" column="stu_id_card" type="java.lang.String"></property>
+        <property name="stu_picture" column="stu_picture" type="java.lang.String"></property>
+        <many-to-one name="classItem_id" column="classItem_id" lazy="false"></many-to-one>
+        <set name="selectedCourse_id" cascade="delete" lazy="false">
+            <key column="stu_id"></key>
+            <one-to-many class="com.yk.model.SelectedCourseEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>

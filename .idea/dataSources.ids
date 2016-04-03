@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - yk_class_oa@localhost" uuid="a0729016-ac1a-4762-b67a-8a45487b20b3">
+    <database-info product="MySQL" version="5.6.22-enterprise-commercial-advanced" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <schema name="" catalog="yk_class_oa"/>
+    <table name="users_tab" schema="" catalog="yk_class_oa" type="TABLE">
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_passwd" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_age" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+    </table>
+    <table name="yk_account" schema="" catalog="yk_class_oa" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name_ch" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="create_time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="role" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_card" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="dept" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="teacher_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_kvyli2pbvh8ppubhk7bi49tur" columns="teacher_id" ref-table="yk_teacher" ref-schema="" ref-catalog="yk_class_oa" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="UK_kvyli2pbvh8ppubhk7bi49tur" unique="true" columns="teacher_id"/>
+      <index name="FK_kvyli2pbvh8ppubhk7bi49tur" unique="false" columns="teacher_id"/>
+    </table>
+    <table name="yk_class_item" schema="" catalog="yk_class_oa" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="classNo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="year" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_d8g8ipvv1wrrsfm5fgho7r3cl" table="yk_student" schema="" catalog="yk_class_oa" columns="classItem_id"/>
+      <exported-key name="FK_sdrf77si91yfrpyrbmj8l7b8f" table="yk_teacher" schema="" catalog="yk_class_oa" columns="classItem_id"/>
+      <index name="UK_3tqh0cqu7uvf45r164w5grfac" unique="true" columns="classNo"/>
+    </table>
+    <table name="yk_student" schema="" catalog="yk_class_oa" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="stu_num" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="stu_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="stu_birthplace" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="stu_birthday" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="stu_sex" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="stu_position" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="stu_origin_school" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="stu_class_num" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="stu_entr_year" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="stu_tel" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="stu_id_card" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="stu_picture" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="classItem_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_d8g8ipvv1wrrsfm5fgho7r3cl" columns="classItem_id" ref-table="yk_class_item" ref-schema="" ref-catalog="yk_class_oa" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="UK_8qusv8u3pt2xprd1ci6dcfny" unique="true" columns="stu_num"/>
+      <index name="FK_d8g8ipvv1wrrsfm5fgho7r3cl" unique="false" columns="classItem_id"/>
+    </table>
+    <table name="yk_teacher" schema="" catalog="yk_class_oa" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="staffId" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="classItem_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_sdrf77si91yfrpyrbmj8l7b8f" columns="classItem_id" ref-table="yk_class_item" ref-schema="" ref-catalog="yk_class_oa" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_kvyli2pbvh8ppubhk7bi49tur" table="yk_account" schema="" catalog="yk_class_oa" columns="teacher_id"/>
+      <index name="UK_mhhnxx5a8w5sq35s2h3m3rp3h" unique="true" columns="staffId"/>
+      <index name="UK_sdrf77si91yfrpyrbmj8l7b8f" unique="true" columns="classItem_id"/>
+      <index name="FK_sdrf77si91yfrpyrbmj8l7b8f" unique="false" columns="classItem_id"/>
+    </table>
+  </data-source>
+</component>
