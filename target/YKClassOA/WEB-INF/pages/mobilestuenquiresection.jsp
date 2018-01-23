@@ -18,7 +18,7 @@
     <table id="t01" border="1">
         <tr>
             <th>姓名</th>
-            <th>班级</th>
+            <%--<th>班级</th>--%>
             <%--<th colspan="<%=ccl.getSubjectTotalCount()*4%>">成绩</th>--%>
             <%
                 for (SelectedCourseEntity sc1:se.getSelectedCourse_id()){
@@ -31,7 +31,7 @@
         </tr>
         <tr>
             <td><%=se.getStu_name()%></td>
-            <td><%=se.getClassItem_id().getClassNo()%></td>
+            <%--<td><%=se.getClassItem_id().getClassNo()%></td>--%>
         <%
             for (SelectedCourseEntity sc:se.getSelectedCourse_id()){
         %>

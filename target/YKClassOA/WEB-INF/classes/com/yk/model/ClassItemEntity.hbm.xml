@@ -11,7 +11,7 @@
         </id>
         <property name="classNo" column="classNo" type="java.lang.String" not-null="true" unique="true"></property>
         <property name="year" column="year" type="integer"></property>
-        <!--<one-to-one name="teacher_id" property-ref="classItem_id"></one-to-one>-->
+        <one-to-one name="teacher_id" property-ref="classItem_id"></one-to-one>
         <set name="setStudents" cascade="all" inverse="true">
             <key column="classItem_id"/>
             <one-to-many class="com.yk.model.StudentEntity"></one-to-many>

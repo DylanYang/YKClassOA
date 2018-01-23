@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by dylanyang on 12/20/15.
  */
-public class CourseEntityCL {
+public class  CourseEntityCL {
     /**
      * dylan
      * @return arraylist

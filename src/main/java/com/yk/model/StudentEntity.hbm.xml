@@ -21,7 +21,7 @@
         <property name="stu_id_card" column="stu_id_card" type="java.lang.String"></property>
         <property name="stu_picture" column="stu_picture" type="java.lang.String"></property>
         <many-to-one name="classItem_id" column="classItem_id" lazy="false"></many-to-one>
-        <set name="selectedCourse_id" cascade="delete" lazy="false">
+        <set name="selectedCourse_id" cascade="delete" lazy="false" order-by="course_id asc">
             <key column="stu_id"></key>
             <one-to-many class="com.yk.model.SelectedCourseEntity"/>
         </set>

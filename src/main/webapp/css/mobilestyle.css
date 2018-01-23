@@ -13,7 +13,7 @@ body{
     margin-right: auto;
     margin-left: auto;
     margin-top: 0px;
-    border: 5px solid #414141;
+    border: 5px solid #888898;
 
 }
 header {
@@ -22,7 +22,7 @@ header {
     font-size: 95%;
     line-height: 120%;
     font-family: "Times New Roman", Times, serif;
-    background-color:black;
+    background-color: #26afe7;
     color:white;
     text-align:center;
 }
@@ -40,17 +40,22 @@ section {
 }
 section h1 {
     text-align: center;
-    color: #000099;
+    color: #000000;
+}
+
+section h5 {
+    text-align: left;
+    color: #ee4c2b;
 }
 footer {
-    background-color:black;
+    background-color: #26afe7;
     color:white;
     clear:both;
     text-align:center;
     padding:5px;
 }
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #888898;
     border-collapse: collapse;
 }
 th, td {
@@ -59,13 +64,13 @@ th, td {
     width: auto;
 }
 table#t01 tr:nth-child(even) {
-    background-color: #eee;
+    background-color: #e9e9e9;
 }
 table#t01 tr:nth-child(odd) {
-    background-color:#fff;
+    background-color: #888898;
 }
 table#t01 th	{
-    background-color: black;
+    background-color: #26afe7;
     color: white;
 }
 .bkLogErr {

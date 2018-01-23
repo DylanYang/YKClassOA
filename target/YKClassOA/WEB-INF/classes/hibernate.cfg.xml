@@ -4,8 +4,8 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://202.203.151.243:3306/yk_class_oa</property>
-        <!--<property name="connection.url">jdbc:mysql://localhost:3306/yk_class_oa</property>-->
+        <!--<property name="connection.url">jdbc:mysql://202.203.151.243:3306/yk_class_oa</property>-->
+        <property name="connection.url">jdbc:mysql://localhost:3306/yk_class_oa</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="connection.username">root</property>

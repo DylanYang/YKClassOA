@@ -115,6 +115,15 @@ public class SelectedCourseEntityCL {
         sc007.setStu_id(stu);
         scCL.saveStuGrade(sc007);
 
+        SelectedCourseEntity sc008 = new SelectedCourseEntity();
+//        sc008.setOrd_score((Integer) gradeMap.get("CS008_ord_score"));
+//        sc008.setEnd_score((Integer) gradeMap.get("CS008_end_score"));
+        sc008.setFinal_result((String) gradeMap.get("CS008_final_result"));
+        ce = (CourseEntity) cl.getCourseEntity(CourseEntity.class, (Integer) gradeMap.get("CS008_course_id"));
+        sc008.setCourse_id(ce);
+        sc008.setStu_id(stu);
+        scCL.saveStuGrade(sc008);
+
         HashSet<SelectedCourseEntity> scSet = new HashSet<SelectedCourseEntity>();
         scSet.add(sc001);
         scSet.add(sc002);
@@ -123,6 +132,7 @@ public class SelectedCourseEntityCL {
         scSet.add(sc005);
         scSet.add(sc006);
         scSet.add(sc007);
+        scSet.add(sc008);
 
         stu.setSelectedCourse_id(scSet);
 
@@ -150,6 +160,8 @@ public class SelectedCourseEntityCL {
         SelectedCourseEntity sc005 = null;
         SelectedCourseEntity sc006 = null;
         SelectedCourseEntity sc007 = null;
+        SelectedCourseEntity sc008 = null;
+
         for(int i=0;i<gradeList.size();i++) {
             HashMap gradeMap = gradeList.get(i);
             String stuNum = (String)gradeMap.get("stuNum");
@@ -218,6 +230,15 @@ public class SelectedCourseEntityCL {
             sc007.setCourse_id(ce);
             sc007.setStu_id(stu);
             scCL.saveStuGrade(sc007);
+
+            sc008 = new SelectedCourseEntity();
+//            sc008.setOrd_score((Double) gradeMap.get("CS008_ord_score"));
+//            sc008.setEnd_score((Double) gradeMap.get("CS008_end_score"));
+            sc008.setFinal_result((String) gradeMap.get("CS008_final_result"));
+            ce = (CourseEntity) cl.getCourseEntity(CourseEntity.class, (Integer) gradeMap.get("CS008_course_id"));
+            sc008.setCourse_id(ce);
+            sc008.setStu_id(stu);
+            scCL.saveStuGrade(sc008);
         }
 
         HashSet<SelectedCourseEntity> scSet = new HashSet<SelectedCourseEntity>();
@@ -228,6 +249,7 @@ public class SelectedCourseEntityCL {
         scSet.add(sc005);
         scSet.add(sc006);
         scSet.add(sc007);
+        scSet.add(sc008);
 
         StudentEntity stu = new StudentEntity();
         stu.setSelectedCourse_id(scSet);
@@ -293,6 +315,12 @@ public class SelectedCourseEntityCL {
 //                gradeMap.put("CS007_ord_score",Double.valueOf(sheet.getCell(20, i).getContents()));
 //                gradeMap.put("CS007_end_score",Double.valueOf(sheet.getCell(21, i).getContents()));
                 gradeMap.put("CS007_final_result",sheet.getCell(8, i).getContents());
+
+                gradeMap.put("CS008_course_id",cList.get(7).getId());
+//                gradeMap.put("CS008_ord_score",Double.valueOf(sheet.getCell(20, i).getContents()));
+//                gradeMap.put("CS008_end_score",Double.valueOf(sheet.getCell(21, i).getContents()));
+                gradeMap.put("CS008_final_result",sheet.getCell(9, i).getContents());
+
                 gradeList.add(gradeMap);
             }
 
